@@ -1,0 +1,30 @@
+{
+  "id": "2112741",
+  "name": "bottom",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5613069",
+      "name": "我的",
+      "font_class": "my",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "9498993",
+      "name": "首页-选中",
+      "font_class": "index",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "14707241",
+      "name": "购物车",
+      "font_class": "che",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}

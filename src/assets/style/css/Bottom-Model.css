@@ -1,0 +1,27 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#Bottom{
+	position: fixed;
+	width: 100% ;
+  height: 50px;
+	font-size: 12px ;
+	background-color:#42B983 ;
+	bottom: 0px;
+
+}
+#Bottom > div{
+	width:33%;
+	float: left ;
+	text-align:center ;
+  font-size: 13px ;
+
+}
+#Bottom > div > span{
+  font-size: 25px ;
+  line-height: 35px ;
+}
+.router-link-active{
+	color: white ;
+}

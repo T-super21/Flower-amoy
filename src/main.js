@@ -4,6 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 底部导航
+import '@/assets/style/css/Bottom-Model.css'
+import '@/assets/style/iconfont.css'
+
+// 解决产商和网络延迟
+import '@/assets/style/border.css'
+import '@/assets/style/reset.css'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
