@@ -14,11 +14,19 @@ import '@/assets/style/border.css'
 import '@/assets/style/reset.css'
 import fastClick from 'fastClick'
 
-//Home的header
+//Homeheader
 import '@/assets/style/css/HomeHeader.css'
+
+//HomeSwiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+
+
+
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
+Vue.use(VueAwesomeSwiper) //使用swiper
 
 /* eslint-disable no-new */
 new Vue({
