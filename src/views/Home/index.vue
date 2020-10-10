@@ -3,12 +3,10 @@
     <home-header></home-header>
     <bottom-model></bottom-model>
 
-<!-- 	keep-alive解决每次切换路由时重载慢的问题！keep-alive:加载切换后有缓存！-->    
+<!-- 	keep-alive解决每次切换路由时重载慢的问题！keep-alive:加载切换后有缓存！-->
     <keep-alive>
       <router-view/>
     </keep-alive>
-
-
   </div>
 </template>
 
@@ -24,5 +22,7 @@ export default{
   }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+  #Home
+    background-color:#F3F3F3
 </style>

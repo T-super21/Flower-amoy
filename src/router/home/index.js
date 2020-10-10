@@ -9,7 +9,7 @@ export default{
     },
     {
       path:'home',
-      component : () => import('@/components/Private/HomeHeader/HeaderTab/Home')
+      component : () => import('@/components/Private/HomeHeader/HeaderTab/Home'),
     },
     {
       path:'flowers',

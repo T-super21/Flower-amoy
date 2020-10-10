@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4672747",
+      "name": "园林资材(改)",
+      "font_class": "yuanlinzicaigai",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "6633984",
+      "name": "配套1",
+      "font_class": "peitao",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "8585158",
+      "name": "新品",
+      "font_class": "zu",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "12610990",
+      "name": "高档花材",
+      "font_class": "hongbeibiaohua",
+      "unicode": "e829",
+      "unicode_decimal": 59433
+    },
+    {
+      "icon_id": "13982947",
+      "name": "全部商品",
+      "font_class": "quanbushangpin",
+      "unicode": "e708",
+      "unicode_decimal": 59144
+    },
+    {
+      "icon_id": "14961764",
+      "name": "绿植4",
+      "font_class": "lvzhi4",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
       "icon_id": "3498425",
       "name": "搜索--1",
       "font_class": "sousuo",
