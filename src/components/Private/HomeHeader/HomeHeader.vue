@@ -1,5 +1,5 @@
 <template>
-  <div id="home-header">
+  <div id="home-header" ref="headers" >
     <div class="Header fontcolor">
     	<i>花淘吧</i>
       <span>让我们一起淘天下</span>
@@ -34,6 +34,7 @@
   export default{
     name:'HomeHeader'
   }
+
 </script>
 
 <style lang="stylus" scoped>
@@ -59,7 +60,7 @@
   .homesearch
     flex:1
     height:.64rem
-    background-color:white
+    background-color:#FFFFFF
     border-radius:.5rem
     span
       line-height:.64rem

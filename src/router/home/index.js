@@ -10,6 +10,28 @@ export default{
     {
       path:'home',
       component : () => import('@/components/Private/HomeHeader/HeaderTab/Home'),
+      children:[
+        {
+          path:'/home/home',
+          redirect:'/home/home/goodstuff'
+        },
+        {
+          path:'goodstuff',
+          component : () => import('@/components/Private/HomeHeader/HomeProducts/views/GoodStuff')
+        },
+        {
+          path:'flowerseveryday',
+          component : () => import('@/components/Private/HomeHeader/HomeProducts/views/FlowersEveryDay')
+        },
+        {
+          path:'vase',
+          component : () => import('@/components/Private/HomeHeader/HomeProducts/views/Vase')
+        },
+        {
+          path:'curing',
+          component : () => import('@/components/Private/HomeHeader/HomeProducts/views/Curing')
+        }
+      ]
     },
     {
       path:'flowers',
