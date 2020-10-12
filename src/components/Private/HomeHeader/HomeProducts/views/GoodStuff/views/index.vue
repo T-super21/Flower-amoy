@@ -129,7 +129,7 @@
           margin-bottom:.2rem
         .p2
           display:block
-          overflow:hidden
+          // overflow:hidden 解决window.onscroll事件不能触发的问题
           color:#999999
           margin-bottom:.2rem
         .p3

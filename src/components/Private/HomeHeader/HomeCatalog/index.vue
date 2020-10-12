@@ -95,8 +95,7 @@
         width:33%
         line-height:.6rem
         margin-bottom:.2rem
-        //超出隐藏
-        overflow:hidden
+        // overflow:hidden   解决window.onscroll事件不能触发的问题
         text-overflow:ellipsis
         div.iconfont
           width:100%

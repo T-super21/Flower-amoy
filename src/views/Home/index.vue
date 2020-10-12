@@ -32,7 +32,10 @@ export default{
     handleScroll(){
       //获取header组件的属性的高度
       let header = this.$refs.header.$el.clientHeight ;
-      if(document.documentElement.scrollTop >= header){
+      //解决document.documentElement.scrollTop手机兼容性的问题
+      let distance_1 = document.documentElement.scrollTop ;
+      let distance_2 = document.body.scrollTop ;
+      if(distance_1 || distance_2 >= header){
         this.isFixed = true ;
       }else{
         this.isFixed = false ;
