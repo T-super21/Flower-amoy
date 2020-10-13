@@ -21,6 +21,10 @@ import '@/assets/style/css/HomeHeader.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
+//数据加载慢时，全局Loading加载效果
+import ProLoading from '@/components/Private/Loading/ProLoading'
+Vue.component('ProLoading',ProLoading) ;
+
 
 
 

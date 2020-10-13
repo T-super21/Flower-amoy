@@ -27,14 +27,18 @@ export default{
   //监听滚动事件
   mounted(){
     window.onscroll = this.handleScroll ;
+
+     //解决网络差，数据加载慢的问题(loading)
+     document.getElementById('Display_1').style.display = 'block' ;
+     document.getElementById('Loading_1').style.display = 'none' ;
+
   },
   methods:{
     handleScroll(){
       //获取header组件的属性的高度
       let header = this.$refs.header.$el.clientHeight ;
-      
-      //解决document.documentElement.scrollTop手机兼容性的问题
 
+      //解决document.documentElement.scrollTop手机兼容性的问题
       let distance_1 = document.documentElement.scrollTop ;
       let distance_2 = document.body.scrollTop ;
       if(distance_1 || distance_2 >= header){

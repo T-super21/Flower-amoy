@@ -1,8 +1,12 @@
 <template>
   <div id="Home">
-    <home-swiper></home-swiper>
-    <home-catalog></home-catalog>
-    <home-products></home-products>
+    <pro-loading id="Loading_1"></pro-loading>
+    <div id="Display_1" style="display: none;">
+      <home-swiper></home-swiper>
+      <home-catalog></home-catalog>
+      <home-products></home-products>
+    </div>
+
   </div>
 </template>
 

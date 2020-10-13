@@ -17,10 +17,10 @@
       <ul>
         <router-link tag="li" to="/home/home">首页</router-link>
         <router-link tag="li" to="/home/flowers">花卉</router-link>
-        <router-link tag="li" to="/home/materials">资材</router-link>
+        <router-link tag="li" to="/home/maintenance">资材</router-link>
         <router-link tag="li" to="/home/gardening">园艺</router-link>
         <router-link tag="li" to="/home/gifts">礼品</router-link>
-        <router-link tag="li" to="/home/Materials">养护</router-link>
+        <router-link tag="li" to="/home/materials">养护</router-link>
         <!-- <div class="sort">
           <span>图标</span>
           分类
