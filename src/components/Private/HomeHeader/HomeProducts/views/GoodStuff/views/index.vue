@@ -2,7 +2,7 @@
   <div class="goodstuff">
       <div
         class="products"
-        v-for="item of ProductsList"
+        v-for="item of productsList"
         :key="item.id"
        >
         <div class="top">
@@ -22,86 +22,10 @@
     name:'views',
     data(){
       return{
-        ProductsList:[
-          {
-            id:'01',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'02',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'03',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'04',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'05',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'06',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'07',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'08',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'09',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'10',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          },
-          {
-            id:'11',
-            imgUrl:'https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1786524160,2975012632&fm=5',
-            name:'桔梗花',
-            note:'颜色翠绿，花型艳丽，姿势雅致大气',
-            price:'53.00'
-          }
-        ]
       }
+    },
+    props:{
+      productsList:Array
     }
   }
 </script>
