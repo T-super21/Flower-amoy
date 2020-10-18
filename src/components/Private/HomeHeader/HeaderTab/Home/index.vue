@@ -29,25 +29,18 @@
     	return{
     		swiperList:[]
     	}
-    }
-    ,
-    mounted(){
-    	this.getHomeData()
     },
-
-    methods:{
-      //加载请求
-    	getHomeData(){
-    		axios.get("/api/index.json").then(this.getHomeDataSucc)
-    	},
-      //获取index.json的数据
-    	getHomeDataSucc(res){
-    		res = res.data ;
-    		if(res.data){
-    			const data = res.data ;
-    			this.swiperList = data.swiperList ;
-    		}
-    	}
+    mounted(){
+      //获取json数据
+      this.axios.get("/api/index.json").then((res)=>{
+        var ret = res.data.ret ;
+        if(ret == true){
+          var swiperList = res.data.data.swiperList ;
+          this.swiperList = swiperList ;
+        }else{
+          console.log("Json 数据获取失败！") ;
+        }
+      })
     }
   }
 </script>

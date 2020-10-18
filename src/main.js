@@ -25,6 +25,9 @@ import 'swiper/dist/css/swiper.css'
 import ProLoading from '@/components/Private/Loading/ProLoading'
 Vue.component('ProLoading',ProLoading) ;
 
+//全局引入axios
+import axios from 'axios'
+Vue.prototype.axios = axios ;
 
 
 

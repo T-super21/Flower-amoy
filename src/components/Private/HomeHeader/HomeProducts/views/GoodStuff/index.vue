@@ -16,22 +16,16 @@
       return{
         productsList:[]
       }
-    }
-    ,
-    mounted(){
-      this.getProcts() ;
     },
-    methods:{
-      getProcts(){
-        axios.get('/api/index.json').then(this.getProductsList) ;
-      },
-      getProductsList(res){
-        res = res.data ;
-        if(res.data){
-          const data = res.data ;
-          this.productsList = data.productsList ;
+    mounted(){
+      this.axios.get('/api/index.json').then((res)=>{
+        var ret = res.data.ret ;
+        if(ret == true){
+          this.productsList = res.data.data.productsList ;
+        }else{
+          console.log("Json 数据获取失败！") ;
         }
-      }
+      })
     }
   }
 </script>

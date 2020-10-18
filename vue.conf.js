@@ -1,0 +1,10 @@
+module.exports={
+  devServer:{
+    proxy:{
+      '/api':{
+        target:'http://140.143.0.143',
+        changeOrigin:true
+      }
+    }
+  }
+}
