@@ -67,7 +67,7 @@
       line-height:.64rem
   .homenews
     line-height:.64rem
-    font-size:.8rem
+    font-size:.6rem
     margin-right:.2rem
 .Model
   height:.64rem
