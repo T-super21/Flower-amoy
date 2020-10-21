@@ -1,5 +1,5 @@
 <template>
-  <div class="goodstuff">
+  <router-link tag="div" to="/datails" class="goodstuff">
       <div
         class="products"
         v-for="item of productsList"
@@ -14,7 +14,7 @@
           <p class="p3">￥{{item.price}}</p>
         </div>
       </div>
-  </div>
+  </router-link>
 </template>
 
 <script>

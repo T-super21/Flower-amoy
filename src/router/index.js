@@ -12,6 +12,9 @@ import matching from './catalog/matching'
 import materials from './catalog/materials'
 import newproducts from './catalog/newproducts'
 
+//home-products-datails
+import datails from './datails'
+
 
 Vue.use(Router)
 
@@ -32,6 +35,8 @@ export default new Router({
     gardening,
     matching,
     materials,
-    newproducts
+    newproducts,
+    
+    datails
   ]
 })

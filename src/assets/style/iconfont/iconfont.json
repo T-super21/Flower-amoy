@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4144033",
+      "name": "右箭头",
+      "font_class": "arrow-right-copy",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "5364970",
+      "name": "左箭头",
+      "font_class": "icon-copy",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "1429123",
+      "name": "坐标",
+      "font_class": "zuobiao",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "5994205",
+      "name": "服务评价-客服",
+      "font_class": "kefu1",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "12154178",
+      "name": "收 藏",
+      "font_class": "shoucang",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
       "icon_id": "4672747",
       "name": "园林资材(改)",
       "font_class": "yuanlinzicaigai",

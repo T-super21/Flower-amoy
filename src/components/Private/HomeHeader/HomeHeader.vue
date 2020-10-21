@@ -55,19 +55,20 @@
 .Search
   display:flex
   margin-left:.2rem
-
+  text-align:center
   margin-bottom:.2rem
   .homesearch
     flex:1
     height:.64rem
     background-color:#FFFFFF
     border-radius:.5rem
+    margin-right:.4rem
     span
       line-height:.64rem
   .homenews
     line-height:.64rem
-    span
-      float:right
+    font-size:.8rem
+    margin-right:.2rem
 .Model
   height:.64rem
   line-height:.64rem

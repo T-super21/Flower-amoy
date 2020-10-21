@@ -20,6 +20,7 @@
     mounted(){
       this.axios.get('/api/index.json').then((res)=>{
         var ret = res.data.ret ;
+        // console.log(res) ;
         if(ret == true){
           this.productsList = res.data.data.productsList ;
         }else{
