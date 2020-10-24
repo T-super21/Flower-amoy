@@ -6,7 +6,7 @@
       <span>————</span>
     </div>
     <div class="border">
-      <i>文字说明:玫瑰</i>
+      <i>{{Pro.desc}}</i>
       <div class="Img">
         <img src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1406916636,3053694953&fm=26&gp=0.jpg" alt="图片">
         <img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3574281276,2304074473&fm=26&gp=0.jpg" alt="图片">
@@ -18,7 +18,10 @@
 
 <script>
   export default{
-    name:'ProductsDatails'
+    name:'ProductsDatails',
+    props:{
+      Pro:''
+    }
   }
 </script>
 
@@ -35,8 +38,11 @@
     margin-top:.2rem
     // background:lightblue
     i
+      display:block
+      text-indent:.65rem
       margin:.2rem .2rem .2rem .2rem
       font-size:.3rem
+      line-height:.4rem
     div.Img
       margin:.2rem .2rem .2rem .2rem
       img

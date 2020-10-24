@@ -2,11 +2,11 @@
   <div id="ProductsDatails" class="datails-slide">
     <back></back>
     <data-header :class="isFixed? 'fixed':''" ></data-header>
-    <swiper-list ref="swiper"></swiper-list>
-    <ship class="ship" ref="ship"></ship>
-    <selects class="selects" ref="select"></selects>
-    <comment class="comment" ref="comment"></comment>
-    <products-datails class="prodatails" ref="datails"></products-datails>
+    <swiper-list ref="swiper" :flowerindex="flowerindex" :Pro="Pro"></swiper-list>
+    <ship class="ship" ref="ship" :Pro="Pro"></ship>
+    <selects class="selects" ref="select" :Pro="Pro"></selects>
+    <comment class="comment" ref="comment" :Pro="Pro"></comment>
+    <products-datails class="prodatails" ref="datails" :Pro="Pro"></products-datails>
     <bottom class="bottom"></bottom>
   </div>
 </template>
@@ -36,12 +36,23 @@
     data(){
       return{
         isFixed:false,
-        isbottom:false
+        isbottom:false,
+        Pro:''
       }
     },
+    props:['flowerindex'],
     mounted(){
       //监听屏幕滚动事件
       window.onscroll = this.headlescroll ;
+
+      //datalist页面的渲染
+      this.axios.get('/api/index.json').then((res)=>{
+        var Index = parseInt(this.flowerindex) ;
+        var ret = res.data.ret ;
+        if(ret == true){
+          this.Pro = res.data.data.productsList[Index] ;
+        }
+      })
     },
     methods:{
       headlescroll(){
@@ -54,16 +65,6 @@
         let distance_2 = document.body.scrollTop ;
         if(distance_1 >= swiper / 2 || distance_2 >= swiper / 2){
           this.isFixed = true ;
-          //顶部标题的实时显示
-          // let Comment = swiper + ship ;
-          // if(distance_1 >= Comment + comment || distance_2 >= comment + Comment){
-          //   this.isbottom = true ;
-
-          // }else if(distance_1 >= Comment || distance_2 >= Comment){
-          //   console.log("comment") ;
-
-          // }
-
         }else{
           this.isFixed = false ;
         }

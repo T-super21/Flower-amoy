@@ -1,20 +1,20 @@
 <template>
   <div id="SwiperList">
     <swiper class="swiper" :options="swiperOption">
-      <swiper-slide>
-        <img src="https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3761083504,3769519560&fm=5" alt="图片">
-      </swiper-slide>
-      <swiper-slide>
-        <img src="https://dss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3761083504,3769519560&fm=5" alt="图片">
+      <swiper-slide
+        v-for="(item,index) in topImgs"
+        :key="index"
+      >
+        <img :src="item" alt="图片">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
     <div class="bottom">
       <p class="p1">
-        <span class="span1">￥</span><span>53.00</span>
+        <span class="span1">￥</span><span>{{Pro.price}}</span>
       </p>
-      <p class="p2">桔梗花 <span>【包邮到家】</span></p>
-      <p class="p3">颜色翠绿，花型艳丽，姿势雅致大气</p>
+      <p class="p2">{{Pro.name}} <span>【包邮到家】</span></p>
+      <p class="p3">{{Pro.note}}</p>
     </div>
 
   </div>
@@ -27,8 +27,23 @@
         return{
           swiperOption:{
             pagination:'.swiper-pagination'
-          }
+          },
+        topImgs:[]
         }
+      },
+      props:{
+        flowerindex:String,
+        Pro:''
+      },
+      mounted(){
+        //基于路由传来商品点击的index,获取index下的商品详情信息(datalist)
+        var Topimgsindex = parseInt(this.flowerindex) ;
+        this.axios.get('/api/index.json').then((res)=>{{
+          var ret = res.data.ret ;
+          if(ret == true){
+            this.topImgs = res.data.data.productsList[Topimgsindex].datalist ;
+          }
+        }})
       }
   }
 </script>

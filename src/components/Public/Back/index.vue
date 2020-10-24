@@ -20,9 +20,9 @@
   	position:fixed
   	font-size:.5rem
   	font-weight:bold
-  	color:red
+  	color:#000000
   	z-index:100
   	border-radius:.2rem
   	margin-top:.3rem
-  	margin-left:.2rem
+  	margin-left:.1rem
 </style>

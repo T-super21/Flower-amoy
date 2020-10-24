@@ -1,9 +1,10 @@
 <template>
-  <router-link tag="div" to="/datails" class="goodstuff">
+  <div class="goodstuff">
       <div
         class="products"
-        v-for="item of productsList"
-        :key="item.id"
+        v-for="(item,index) in productsList"
+        :key="item.index"
+        @click="Getindex(index)"
        >
         <div class="top">
           <img :src="item.imgUrl" alt="图片">
@@ -14,7 +15,7 @@
           <p class="p3">￥{{item.price}}</p>
         </div>
       </div>
-  </router-link>
+  </div>
 </template>
 
 <script>
@@ -26,6 +27,13 @@
     },
     props:{
       productsList:Array
+    },
+    methods:{
+      //获取商品被点击的index,并通过路由传值
+      Getindex(flowerindex){
+        // console.log(flowerindex) ;
+        this.$router.push('/datails/' + flowerindex) ;
+      }
     }
   }
 </script>

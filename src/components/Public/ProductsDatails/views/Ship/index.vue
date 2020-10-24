@@ -3,7 +3,7 @@
     <i class="i1">发货</i>
     <i class="i2">
       <span class="iconfont">&#xe64d;</span>
-      <i>广东广州</i>
+      <i>{{Pro.place}}</i>
     </i>
 
   </div>
@@ -11,7 +11,10 @@
 
 <script>
   export default{
-    name:'Ship'
+    name:'Ship',
+    props:{
+      Pro:''
+    }
   }
 </script>
 

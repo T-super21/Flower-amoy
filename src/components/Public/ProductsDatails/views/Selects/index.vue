@@ -10,7 +10,10 @@
 
 <script>
   export default{
-    name:'Selects'
+    name:'Selects',
+    props:{
+      Pro:''
+    }
   }
 </script>
 

@@ -1,23 +1,39 @@
 <template>
   <div class="Header">
     <div class="top" id="Top">
-      <i >商品</i>
-      <i >评价</i>
-      <i>详情</i>
+      <i
+        v-for="(item,index) in Titlelist"
+        :key="index"
+        :class="{active: index === currentIndex}"
+        @click="Clicktitle(index)"
+      >
+        {{item}}
+      </i>
     </div>
   </div>
 </template>
 
 <script>
   export default{
-    name:'DataHeader'
+    name:'DataHeader',
+    data(){
+      return{
+        Titlelist:['商品','评价','详情'],
+        currentIndex:0
+      }
+    },
+    methods:{
+      Clicktitle(index){
+        this.currentIndex = index ;
+      }
+    }
   }
 </script>
 
 <style lang="stylus" scoped>
 .Header
   height:1rem
-  background:lightblue
+  background:#F3F3F3
   display:none
   .top
     display:flex
@@ -29,4 +45,6 @@
       flex:1
     .bottom
       border-bottom:solid 2px red
+    .active
+      color:red
 </style>

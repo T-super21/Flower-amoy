@@ -1,4 +1,5 @@
 export default{
-  path:'/datails',
-  component: () => import('@/components/Public/ProductsDatails')
+  path:'/datails/:flowerindex',
+  component: () => import('@/components/Public/ProductsDatails'),
+  props:true
 }
