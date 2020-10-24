@@ -6,7 +6,7 @@
     <ship class="ship" ref="ship" :Pro="Pro"></ship>
     <selects class="selects" ref="select" :Pro="Pro"></selects>
     <comment class="comment" ref="comment" :Pro="Pro"></comment>
-    <products-datails class="prodatails" ref="datails" :Pro="Pro"></products-datails>
+    <products-datails class="prodatails" ref="datails" :Pro="Pro" :flowerindex="flowerindex"></products-datails>
     <bottom class="bottom"></bottom>
   </div>
 </template>

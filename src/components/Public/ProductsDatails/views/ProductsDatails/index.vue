@@ -8,9 +8,13 @@
     <div class="border">
       <i>{{Pro.desc}}</i>
       <div class="Img">
-        <img src="https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1406916636,3053694953&fm=26&gp=0.jpg" alt="图片">
-        <img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3574281276,2304074473&fm=26&gp=0.jpg" alt="图片">
-        <img src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1091934395,3795795842&fm=26&gp=0.jpg" alt="图片">
+        <img
+          v-for="(item,index) in Buttomimg"
+          :key="index"
+          :src="item"
+          alt="图片"
+        >
+
       </div>
     </div>
   </div>
@@ -20,7 +24,24 @@
   export default{
     name:'ProductsDatails',
     props:{
-      Pro:''
+      Pro:'',
+      //接收index
+      flowerindex:String
+    },
+    data(){
+      return{
+        Buttomimg:[]
+      }
+    },
+    mounted(){
+      //基于商品点击index(flowerindex)来获取相关的详情的(datalists)图片
+      this.axios.get('/api/index.json').then((res)=>{
+        var Butimgindex = parseInt(this.flowerindex) ;
+        var ret = res.data.ret ;
+        if(ret == true){
+          this.Buttomimg = res.data.data.productsList[Butimgindex].datalists ;
+        }
+      })
     }
   }
 </script>
