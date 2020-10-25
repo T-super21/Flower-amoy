@@ -1,12 +1,12 @@
 <template>
   <div id="ProductsDatails" class="datails-slide">
     <back></back>
-    <data-header :class="isFixed? 'fixed':''" ></data-header>
+    <data-header :class="isFixed? 'fixed':''" @titleClick="titleClick" ref="header"></data-header>
     <swiper-list ref="swiper" :flowerindex="flowerindex" :Pro="Pro"></swiper-list>
     <ship class="ship" ref="ship" :Pro="Pro"></ship>
     <selects class="selects" ref="select" :Pro="Pro"></selects>
     <comment class="comment" ref="comment" :Pro="Pro"></comment>
-    <products-datails class="prodatails" ref="datails" :Pro="Pro" :flowerindex="flowerindex"></products-datails>
+    <products-datails class="prodatails" ref="Imgs" :Pro="Pro" :flowerindex="flowerindex"></products-datails>
     <bottom class="bottom"></bottom>
   </div>
 </template>
@@ -37,7 +37,9 @@
       return{
         isFixed:false,
         isbottom:false,
-        Pro:''
+        Pro:'',
+        themTopYs:[],
+        currentIndex:0
       }
     },
     props:['flowerindex'],
@@ -55,19 +57,45 @@
       })
     },
     methods:{
+      //屏幕滑动距离是否满足可以显示顶部导航栏
       headlescroll(){
         //获取swiper-list 的height
         let swiper = this.$refs.swiper.$el.clientHeight ;
         let comment = this.$refs.comment.$el.clientHeight ;
         let ship  = this.$refs.ship.$el.clientHeight ;
-        // 屏幕滚动的距离
+
+        //屏幕滚动之后获取组件的距离
+        this.themTopYs = [] ;
+        this.themTopYs.push(0) ;
+        this.themTopYs.push(this.$refs.comment.$el.offsetTop - 60) ;
+        this.themTopYs.push(this.$refs.Imgs.$el.offsetTop - 60) ;
+
+        //获取屏幕的实时滚动距离(解决兼容性问题)
         let distance_1 = document.documentElement.scrollTop ;
         let distance_2 = document.body.scrollTop ;
+
+        //监听屏幕滚动时,据子组件点击标题传入的index和内容联动
+        let length = this.themTopYs.length ;
+        let slides = this.themTopYs ;
+        for(let i = 0 ; i < length ; i++){
+          //根据相应组件的offsetTop(themTopYs数组)下标值去确定title的index
+          if((i < length -1 && (distance_1 >= slides[i] || distance_2 >= slides[i]) && (distance_1 <= slides[i+1] || distance_2 <= slides[i+1])) || (i === length -1 && (distance_1 >= slides[i] || distance_2 >= slides[i]))){
+            this.currentIndex = i ;
+            this.$refs.header.currentIndex = this.currentIndex ;
+          }
+        }
+
+        //屏幕滚动距离是否显示顶部的导航栏
         if(distance_1 >= swiper / 2 || distance_2 >= swiper / 2){
           this.isFixed = true ;
         }else{
           this.isFixed = false ;
         }
+      },
+      //接收子组件点击后的index，点击后去到相应的内容
+      titleClick(index){
+        document.documentElement.scrollTop = this.themTopYs[index] ;
+        document.body.scrollTop = this.themTopYs[index] ;
       }
     }
   }

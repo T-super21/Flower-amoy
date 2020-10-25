@@ -23,8 +23,11 @@
       }
     },
     methods:{
+      //title点击触发显示相应title
       Clicktitle(index){
         this.currentIndex = index ;
+        //向父组件传出点击title时的index
+        this.$emit('titleClick',index) ;
       }
     }
   }
