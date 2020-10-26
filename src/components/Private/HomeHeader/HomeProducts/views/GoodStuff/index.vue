@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  import {GetDatas} from '@/network/home'
   import axios from 'axios'
   import goodstuff from '@/components/Private/HomeHeader/HomeProducts/views/GoodStuff/views'
   export default{
@@ -18,7 +19,8 @@
       }
     },
     mounted(){
-      this.axios.get('/api/index.json').then((res)=>{
+      //封装的GetDatas函数请求json数据
+      GetDatas().then(res =>{
         var ret = res.data.ret ;
         // console.log(res) ;
         if(ret == true){

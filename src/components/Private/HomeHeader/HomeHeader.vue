@@ -79,9 +79,9 @@
       float:left
       text-align:center
       font-size:.3rem
-      transition:0.5s
+      transition:0.2s
     .router-link-active
       font-size:.4rem
-      transition:0.5s
+      transition:0.2s
       // border-bottom:10px solid red
 </style>

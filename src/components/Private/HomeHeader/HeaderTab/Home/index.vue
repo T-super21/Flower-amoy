@@ -12,7 +12,9 @@
 
 <script>
   //引入axios
-	import axios from 'axios'
+	// import axios from 'axios'
+  //引入封装好的axios数据请求
+  import {GetDatas} from '@/network/home'
 
   import HomeSwiper from '@/components/Private/HomeHeader/HomeSwiper' ;
   import HomeCatalog from '@/components/Private/HomeHeader/HomeCatalog' ;
@@ -32,7 +34,7 @@
     },
     mounted(){
       //获取json数据
-      this.axios.get("/api/index.json").then((res)=>{
+      GetDatas().then(res =>{
         var ret = res.data.ret ;
         if(ret == true){
           var swiperList = res.data.data.swiperList ;

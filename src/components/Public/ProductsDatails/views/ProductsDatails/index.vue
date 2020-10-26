@@ -21,6 +21,7 @@
 </template>
 
 <script>
+  import {GetDatas} from '@/network/home'
   export default{
     name:'ProductsDatails',
     props:{
@@ -35,11 +36,13 @@
     },
     mounted(){
       //基于商品点击index(flowerindex)来获取相关的详情的(datalists)图片
-      this.axios.get('/api/index.json').then((res)=>{
+      GetDatas().then(res =>{
         var Butimgindex = parseInt(this.flowerindex) ;
         var ret = res.data.ret ;
         if(ret == true){
           this.Buttomimg = res.data.data.productsList[Butimgindex].datalists ;
+        }else{
+          consoel.log("Json数据请求失败!") ;
         }
       })
     }

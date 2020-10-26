@@ -12,6 +12,8 @@
 </template>
 
 <script>
+  import {GetDatas} from '@/network/home'
+
   import Back from '@/components/Public/Back'
   import SwiperList from '@/components/Public/ProductsDatails/views/SwiperList'
   import Ship from '@/components/Public/ProductsDatails/views/Ship'
@@ -48,11 +50,13 @@
       window.onscroll = this.headlescroll ;
 
       //datalist页面的渲染
-      this.axios.get('/api/index.json').then((res)=>{
+      GetDatas().then(res =>{
         var Index = parseInt(this.flowerindex) ;
         var ret = res.data.ret ;
         if(ret == true){
           this.Pro = res.data.data.productsList[Index] ;
+        }else{
+          consoel.log("Json数据请求失败！") ;
         }
       })
     },

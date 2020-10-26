@@ -21,6 +21,7 @@
 </template>
 
 <script>
+  import {GetDatas} from '@/network/home'
   export default{
     name:'SwiperList',
       data(){
@@ -38,12 +39,14 @@
       mounted(){
         //基于路由传来商品点击的index,获取index下的商品详情信息(datalist)
         var Topimgsindex = parseInt(this.flowerindex) ;
-        this.axios.get('/api/index.json').then((res)=>{{
+        GetDatas().then(res =>{
           var ret = res.data.ret ;
           if(ret == true){
             this.topImgs = res.data.data.productsList[Topimgsindex].datalist ;
+          }else{
+            consoel.log("Json数据请求失败!") ;
           }
-        }})
+        })
       }
   }
 </script>
