@@ -2,11 +2,11 @@
   <div id="ProductsDatails" class="datails-slide">
     <back></back>
     <data-header :class="isFixed? 'fixed':''" @titleClick="titleClick" ref="header"></data-header>
-    <swiper-list ref="swiper" :flowerindex="flowerindex" :Pro="Pro"></swiper-list>
+    <swiper-list ref="swiper" :dayindex="dayindex" :Pro="Pro"></swiper-list>
     <ship class="ship" ref="ship" :Pro="Pro"></ship>
     <selects class="selects" ref="select" :Pro="Pro"></selects>
     <comment class="comment" ref="comment" :Pro="Pro"></comment>
-    <products-datails class="prodatails" ref="Imgs" :Pro="Pro" :flowerindex="flowerindex"></products-datails>
+    <products-datails class="prodatails" ref="Imgs" :Pro="Pro" :dayindex="dayindex"></products-datails>
     <bottom class="bottom"></bottom>
   </div>
 </template>
@@ -15,13 +15,13 @@
   import {GetDatas} from '@/network/home'
 
   import Back from '@/components/Public/Back'
-  import SwiperList from '@/components/Public/ProductsDatails/views/SwiperList'
-  import Ship from '@/components/Public/ProductsDatails/views/Ship'
-  import Comment from '@/components/Public/ProductsDatails/views/Comment'
-  import Selects from '@/components/Public/ProductsDatails/views/Selects'
-  import Bottom from '@/components/Public/ProductsDatails/views/Bottom'
-  import ProductsDatails from '@/components/Public/ProductsDatails/views/ProductsDatails'
-  import DataHeader from '@/components/Public/DataHeader'
+  import SwiperList from '@/components/Public/p1/ProductsDatails/views/SwiperList'
+  import Ship from '@/components/Public/p1/ProductsDatails/views/Ship'
+  import Comment from '@/components/Public/p1/ProductsDatails/views/Comment'
+  import Selects from '@/components/Public/p1/ProductsDatails/views/Selects'
+  import Bottom from '@/components/Public/p1/ProductsDatails/views/Bottom'
+  import ProductsDatails from '@/components/Public/p1/ProductsDatails/views/ProductsDatails'
+  import DataHeader from '@/components/Public/p1/DataHeader'
 
   export default{
     name:'ProductsList',
@@ -44,18 +44,17 @@
         currentIndex:0
       }
     },
-    props:['flowerindex'],
+    props:['dayindex'],
     mounted(){
       //监听屏幕滚动事件
       window.onscroll = this.headlescroll ;
 
       //datalist页面的渲染
       GetDatas().then(res =>{
-        var Index = parseInt(this.flowerindex) ;
-        console.log(this.flowerindex) ;
+        var Index = parseInt(this.dayindex) ;
         var ret = res.data.ret ;
         if(ret == true){
-          this.Pro = res.data.data.productsList[Index] ;
+          this.Pro = res.data.data.evedayflower[Index] ;
         }else{
           consoel.log("Json数据请求失败！") ;
         }

@@ -1,6 +1,6 @@
 <template>
   <div id="Vase">
-    <vase :productsList="productsList"></vase>
+    <vase :vase="vase"></vase>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
     },
     data(){
       return{
-        productsList:[]
+        vase:[]
       }
     },
     mounted(){
@@ -24,7 +24,7 @@
         var ret = res.data.ret ;
         // console.log(res) ;
         if(ret == true){
-          this.productsList = res.data.data.productsList ;
+          this.vase = res.data.data.vase ;
         }else{
           console.log("Json 数据获取失败！") ;
         }

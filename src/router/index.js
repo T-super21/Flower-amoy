@@ -13,7 +13,10 @@ import materials from './catalog/materials'
 import newproducts from './catalog/newproducts'
 
 //home-products-datails
-import datails from './datails'
+import p0 from './datails/p0'
+import p1 from './datails/p1'
+import p2 from './datails/p2'
+import p3 from './datails/p3'
 
 
 Vue.use(Router)
@@ -37,6 +40,9 @@ export default new Router({
     materials,
     newproducts,
 
-    datails
+    p0,
+    p1,
+    p2,
+    p3
   ]
 })

@@ -1,6 +1,6 @@
 <template>
   <div id="Curing">
-    <curing :productsList="productsList"></curing>
+    <curing :cure="cure"></curing>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
     },
     data(){
       return{
-        productsList:[]
+        cure:[]
       }
     },
     mounted(){
@@ -24,7 +24,7 @@
         var ret = res.data.ret ;
         // console.log(res) ;
         if(ret == true){
-          this.productsList = res.data.data.productsList ;
+          this.cure = res.data.data.cure ;
         }else{
           console.log("Json 数据获取失败！") ;
         }

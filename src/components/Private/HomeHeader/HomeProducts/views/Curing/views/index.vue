@@ -2,7 +2,7 @@
   <div class="Curing">
     <div
       class="products"
-      v-for="(item,index) in productsList"
+      v-for="(item,index) in cure"
       :key="item.index"
       @click="Getindex(index)"
     >
@@ -26,13 +26,13 @@
       }
     },
     props:{
-      productsList:Array
+      cure:Array
     },
     methods:{
       //获取商品被点击的index,并通过路由传值
-      Getindex(flowerindex){
+      Getindex(cureindex){
         // console.log(flowerindex) ;
-        this.$router.push('/datails/' + flowerindex) ;
+        this.$router.push('/datails/p3' + cureindex) ;
       }
     }
   }
