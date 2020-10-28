@@ -14,7 +14,7 @@ module.exports = {
     proxyTable: {
       '/api':{
               //请求访问目标
-          		target:'http://140.143.0.143',
+          		// target:'http://140.143.0.143',
               //转发重写目标
 //        		pathRewrite:{
 //        			'^/api':'/static/mock'

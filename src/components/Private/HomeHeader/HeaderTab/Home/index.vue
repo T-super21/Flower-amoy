@@ -4,7 +4,7 @@
     <div id="Display_1" style="display: none;">
       <home-swiper :swiperList="swiperList"></home-swiper>
       <home-catalog></home-catalog>
-      <home-products class="products"></home-products>
+     <home-products class="products"></home-products>
     </div>
 
   </div>

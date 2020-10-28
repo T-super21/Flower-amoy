@@ -1,5 +1,5 @@
 <template>
-  <div class="goodstuff">
+  <div class="goodstuff" ref="Protitle">
       <div
         class="products"
         v-for="(item,index) in productsList"

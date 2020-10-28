@@ -52,6 +52,7 @@
       //datalist页面的渲染
       GetDatas().then(res =>{
         var Index = parseInt(this.flowerindex) ;
+        console.log(this.flowerindex) ;
         var ret = res.data.ret ;
         if(ret == true){
           this.Pro = res.data.data.productsList[Index] ;

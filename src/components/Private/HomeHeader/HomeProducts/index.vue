@@ -3,12 +3,13 @@
     <div class="products">
       <ul>
         <router-link
-          v-for="item of ProductsList"
-          :key="item.id"
+          v-for="(item,index) in ProductsList"
+          :key="item.index"
           tag="li"
-          :to="item.to">
-            {{item.desc}}
-          </router-link >
+          :to="item.to"
+        >
+          <span @click="TitleIndex(index)">{{item.desc}}</span>
+        </router-link >
 
       </ul>
     </div>
@@ -46,6 +47,12 @@
             to:'/home/home/curing'
           }
         ]
+      }
+    },
+    methods:{
+      //据点击标题的index来确定显示那个商品的详情页
+      TitleIndex(index){
+        // console.log(index) ;
       }
     }
   }

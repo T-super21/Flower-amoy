@@ -36,7 +36,7 @@ export default new Router({
     matching,
     materials,
     newproducts,
-    
+
     datails
   ]
 })
