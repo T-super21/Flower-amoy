@@ -18,6 +18,9 @@ import p1 from './datails/p1'
 import p2 from './datails/p2'
 import p3 from './datails/p3'
 
+//import Search
+import search from './search'
+
 
 Vue.use(Router)
 
@@ -39,6 +42,8 @@ export default new Router({
     matching,
     materials,
     newproducts,
+
+    search,
 
     p0,
     p1,

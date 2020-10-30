@@ -5,10 +5,10 @@
       <span>让我们一起淘天下</span>
     </div>
     <div class="Search">
-      <div class="homesearch">
+      <router-link  tag="div" to="/search" class="homesearch">
         <span class="iconfont ">&#xe603;</span>
         发现你要的商品
-      </div>
+      </router-link>
       <span class="homenews iconfont">
         &#xe604;
       </span>
