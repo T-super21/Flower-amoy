@@ -7,7 +7,7 @@
     <selects class="selects" ref="select" :Pro="Pro"></selects>
     <comment class="comment" ref="comment" :Pro="Pro"></comment>
     <products-datails class="prodatails" ref="Imgs" :Pro="Pro" :vaseindex="vaseindex"></products-datails>
-    <bottom class="bottom"></bottom>
+    <bottom class="bottom" @addCart="addCart"></bottom>
   </div>
 </template>
 
@@ -66,7 +66,7 @@
         //获取swiper-list 的height
         let swiper = this.$refs.swiper.$el.clientHeight ;
         let comment = this.$refs.comment.$el.clientHeight ;
-        let ship  = this.$refs.ship.$el.clientHeight ;
+        // let ship  = this.$refs.ship.$el.clientHeight ;
 
         //屏幕滚动之后获取组件的距离
         this.themTopYs = [] ;
@@ -100,6 +100,16 @@
       titleClick(index){
         document.documentElement.scrollTop = this.themTopYs[index] ;
         document.body.scrollTop = this.themTopYs[index] ;
+      },
+      addCart(){
+        const products_2 = {} ;
+        products_2.id = this.Pro.id ;
+        products_2.image = this.Pro.imgUrl ;
+        products_2.title = this.Pro.name ;
+        products_2.note = this.Pro.note ;
+        products_2.price = this.Pro.price ;
+
+        this.$store.commit('addCart',products_2) ;
       }
     }
   }

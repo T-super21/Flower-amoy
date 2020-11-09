@@ -66,7 +66,7 @@
         //获取swiper-list 的height
         let swiper = this.$refs.swiper.$el.clientHeight ;
         let comment = this.$refs.comment.$el.clientHeight ;
-        let ship  = this.$refs.ship.$el.clientHeight ;
+        // let ship  = this.$refs.ship.$el.clientHeight ;
 
         //屏幕滚动之后获取组件的距离
         this.themTopYs = [] ;
@@ -112,6 +112,7 @@
         products.image = this.Pro.imgUrl ;
         products.title = this.Pro.name ;
         products.note = this.Pro.note ;
+        products.price = this.Pro.price ;
 
         //把products添加到Vuex中
         this.$store.commit('addCart',products);

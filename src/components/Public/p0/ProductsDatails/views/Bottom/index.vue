@@ -4,10 +4,10 @@
       <div class="iconfont">&#xe607;</div>
       <i>客服</i>
     </div>
-    <div class="bottom_1">
+    <router-link tag="div" to="/cart" class="bottom_1">
       <div class="iconfont">&#xe602;</div>
       <i>购物车</i>
-    </div>
+    </router-link>
     <div class="bottom_2 bone" @click="AddToCart">
       加入购物车
     </div>
