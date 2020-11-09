@@ -8,7 +8,7 @@
       <div class="iconfont">&#xe602;</div>
       <i>购物车</i>
     </div>
-    <div class="bottom_2 bone">
+    <div class="bottom_2 bone" @click="AddToCart">
       加入购物车
     </div>
     <div class="bottom_2 btwo">
@@ -19,7 +19,12 @@
 
 <script>
   export default{
-    name:'Bottom'
+    name:'Bottom',
+    methods:{
+      AddToCart(){
+        this.$emit('addCart') ;
+      }
+    }
   }
 </script>
 

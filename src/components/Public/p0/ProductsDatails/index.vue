@@ -7,7 +7,7 @@
     <selects class="selects" ref="select" :Pro="Pro"></selects>
     <comment class="comment" ref="comment" :Pro="Pro"></comment>
     <products-datails class="prodatails" ref="Imgs" :Pro="Pro" :flowerindex="flowerindex"></products-datails>
-    <bottom class="bottom"></bottom>
+    <bottom class="bottom" @addCart='addCart'></bottom>
   </div>
 </template>
 
@@ -100,6 +100,21 @@
       titleClick(index){
         document.documentElement.scrollTop = this.themTopYs[index] ;
         document.body.scrollTop = this.themTopYs[index] ;
+      },
+      //添加到购物车
+      addCart(){
+        //声明购物车的对象
+        const products = {};
+        // console.log(this.Pro.datalist[0],this.Pro.name,this.Pro.price) ;
+
+        //获取点击购买时的图片，标题，简介，价格并赋值给products
+        products.id = this.Pro.id ;
+        products.image = this.Pro.imgUrl ;
+        products.title = this.Pro.name ;
+        products.note = this.Pro.note ;
+
+        //把products添加到Vuex中
+        this.$store.commit('addCart',products);
       }
     }
   }
