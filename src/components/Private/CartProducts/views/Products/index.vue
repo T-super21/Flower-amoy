@@ -16,8 +16,12 @@
               <i>{{item.note}}</i>
             </div>
             <div class="bottom">
-              <i>￥{{item.price}}</i>
-              <span>x{{item.count}}</span>
+              <div class="bott_left">￥{{parseFloat(item.price * item.count).toFixed(2)}}</div>
+              <div class="bott_center">
+                <button @click="delCount(index)">-</button>
+                <i>{{item.count}}</i>
+                <button @click="addCount(index)">+</button>
+            </div>
             </div>
           </div>
         </li>
@@ -28,7 +32,24 @@
 
 <script>
   export default{
-    name:'Products'
+    name:'Products',
+    methods:{
+     //减小数量
+      delCount(index){
+    //  		console.log("-") ;
+        if(this.$store.state.cartList[index].count > 1){
+          this.$store.state.cartList[index].count -- ;
+        			
+        }
+      },
+     //增加数量
+      addCount(index){
+    //  		console.log("+") ;
+        if(this.$store.state.cartList[index].count < 9){
+          this.$store.state.cartList[index].count ++ ;
+        }
+      }
+    }
   }
 </script>
 
@@ -67,14 +88,25 @@
                 margin-top:.3rem
                 color:#989798
             .bottom
-              i
-                font-size:.4rem
-                color:#FF7C3F
-                font-weight:bold
-              span
-                float:right
-                font-size:.4rem
-                margin-right:.2rem
+            	display:flex
+            	text-align:center
+            	line-height:.5rem
+            	margin-bottom:1rem
+            	.bott_left
+            		flex:1
+            		color:#FF6921
+            		font-size:.4rem
+            		font-weight:bold
+            	.bott_center
+            		flex:2
+            		button
+            			width:.8rem
+            			font-weight:bold
+            	.bott_right
+            		flex:1
+            		i
+            			color:red
+            			font-size:.4rem
 
 
 </style>
