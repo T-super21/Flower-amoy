@@ -115,7 +115,7 @@
         products.price = this.Pro.price ;
 
         //把products添加到Vuex中
-        this.$store.commit('addCart',products);
+        this.$store.dispatch('addCart',products);
       }
     }
   }

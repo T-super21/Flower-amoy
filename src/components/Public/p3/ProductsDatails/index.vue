@@ -108,7 +108,7 @@
         products_3.title = this.Pro.name ;
         products_3.note = this.Pro.note ;
         products_3.price = this.Pro.price ;
-        this.$store.commit('addCart',products_3) ;
+        this.$store.dispatch('addCart',products_3) ;
 
       }
     }

@@ -109,7 +109,7 @@
         products_1.note = this.Pro.note ;
         products_1.price = this.Pro.price ;
 
-        this.$store.commit('addCart',products_1) ;
+        this.$store.dispatch('addCart',products_1) ;
       }
     }
   }

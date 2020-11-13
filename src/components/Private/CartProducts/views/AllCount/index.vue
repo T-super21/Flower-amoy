@@ -54,7 +54,7 @@
         return this.$store.state.cartList.filter(item =>{
           return item.checked ;
         }).reduce((preValue,item) =>{ //reduce过滤后进行计算
-          return eval(parseFloat(preValue + item.price * item.count).toFixed(2)) ;
+          return eval(parseFloat(preValue + (item.price * item.count)).toFixed(2)) ;
         },0) ;
       }
     }
