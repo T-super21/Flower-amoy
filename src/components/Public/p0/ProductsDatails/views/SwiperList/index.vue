@@ -1,5 +1,5 @@
 <template>
-  <div id="SwiperList">
+  <div id="SwiperList" class="wrapper">
     <swiper class="swiper" :options="swiperOption">
       <swiper-slide
         v-for="(item,index) in topImgs"
@@ -52,6 +52,8 @@
 </script>
 
 <style lang="stylus" scoped>
+.wrapper >>> .swiper-pagination-bullet-active
+  background:#FFFFFF
 #SwiperList
   .swiper
     min-width:100%
