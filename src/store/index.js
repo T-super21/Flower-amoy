@@ -20,6 +20,7 @@ const store = new Vuex.Store({
       }else{
         //没有就直接add count并push到cartList中
         payload.count = 1 ;
+        payload.checked = true ;
         state.cartList.push(payload) ;
       }
     }

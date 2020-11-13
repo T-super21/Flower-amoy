@@ -7,6 +7,9 @@
           v-for="(item,index) in $store.state.cartList"
           :key="item.index"
           >
+          <checkbox 
+            :is-checked="item.checked" 
+            @click.native="checkclick(index)"/>
           <div class="left">
             <img :src="item.image" alt="图片">
           </div>
@@ -31,6 +34,7 @@
 </template>
 
 <script>
+  import Checkbox from '@/components/Private/CartProducts/views/Checkbox'
   export default{
     name:'Products',
     methods:{
@@ -39,7 +43,6 @@
     //  		console.log("-") ;
         if(this.$store.state.cartList[index].count > 1){
           this.$store.state.cartList[index].count -- ;
-        			
         }
       },
      //增加数量
@@ -48,7 +51,14 @@
         if(this.$store.state.cartList[index].count < 9){
           this.$store.state.cartList[index].count ++ ;
         }
+      },
+      //点击单选按钮后，改模型的checked状态(取反)
+      checkclick(index){
+        this.$store.state.cartList[index].checked = ! this.$store.state.cartList[index].checked ;
       }
+    },
+    components:{
+      Checkbox
     }
   }
 </script>
@@ -57,7 +67,7 @@
   .Products
     .products
       margin-top:1rem
-      margin-bottom:1rem
+      margin-bottom:1.6rem
       ul
         li
           height:2.5rem
@@ -65,6 +75,7 @@
           display:flex
           background:white
           border:1px solid white
+
           .left
             margin:.1rem .1rem .1rem .1rem
             float:left
@@ -89,24 +100,17 @@
                 color:#989798
             .bottom
             	display:flex
-            	text-align:center
             	line-height:.5rem
-            	margin-bottom:1rem
             	.bott_left
             		flex:1
             		color:#FF6921
             		font-size:.4rem
             		font-weight:bold
             	.bott_center
-            		flex:2
+            		flex:1
             		button
             			width:.8rem
             			font-weight:bold
-            	.bott_right
-            		flex:1
-            		i
-            			color:red
-            			font-size:.4rem
 
 
 </style>
