@@ -121,6 +121,7 @@
 
         //把products添加到Vuex中
         this.$store.dispatch('addCart',products).then(res =>{
+          //加入购物车提示信息(加入新商品or数量加一)
           this.message = res ;
           this.show = true ;
           setTimeout(() =>{

@@ -19,7 +19,7 @@ export default{
           payload.checked = true ;
           // state.cartList.push(payload) ;
           context.commit(ADD_TO_CART,payload) ;
-          resolve("成功加入购物车") ;
+          resolve("加入购物车成功") ;
         }
       })
     }

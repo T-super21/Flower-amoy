@@ -115,6 +115,7 @@
         products_2.price = this.Pro.price ;
 
         this.$store.dispatch('addCart',products_2).then(res =>{
+          //加入购物车提示信息(加入新商品or数量加一)
           this.show = true ;
           this.message = res ;
           setTimeout(() =>{
