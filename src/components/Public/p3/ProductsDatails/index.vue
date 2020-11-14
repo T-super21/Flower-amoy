@@ -7,6 +7,7 @@
     <selects class="selects" ref="select" :Pro="Pro"></selects>
     <comment class="comment" ref="comment" :Pro="Pro"></comment>
     <products-datails class="prodatails" ref="Imgs" :Pro="Pro" :cureindex="cureindex"></products-datails>
+    <toast :message="message" :show="show"></toast>
     <bottom class="bottom" @addCart="addCart"></bottom>
   </div>
 </template>
@@ -22,6 +23,7 @@
   import Bottom from '@/components/Public/p3/ProductsDatails/views/Bottom'
   import ProductsDatails from '@/components/Public/p3/ProductsDatails/views/ProductsDatails'
   import DataHeader from '@/components/Public/p3/DataHeader'
+  import Toast from '@/components/Public/Toast/Toast.vue'
 
   export default{
     name:'ProductsList',
@@ -33,7 +35,8 @@
       Selects,
       ProductsDatails,
       Bottom,
-      DataHeader
+      DataHeader,
+      Toast
     },
     data(){
       return{
@@ -41,7 +44,9 @@
         isbottom:false,
         Pro:'',
         themTopYs:[],
-        currentIndex:0
+        currentIndex:0,
+        show:false,
+        message:''
       }
     },
     props:['cureindex'],
@@ -108,7 +113,14 @@
         products_3.title = this.Pro.name ;
         products_3.note = this.Pro.note ;
         products_3.price = this.Pro.price ;
-        this.$store.dispatch('addCart',products_3) ;
+        this.$store.dispatch('addCart',products_3).then(res =>{
+          this.show = true ;
+          this.message = res ;
+          setTimeout(() =>{
+            this.show = false ;
+            this.message = '' ;
+          },2000)
+        })
 
       }
     }

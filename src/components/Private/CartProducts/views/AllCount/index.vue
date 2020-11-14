@@ -11,23 +11,28 @@
       合计:
       <i>￥{{AllPrice}}</i>
     </div>
-    <div class="right">
+    <div class="right" @click="GoToCount">
       去计算
       <i>({{this.$store.state.cartList.length}})</i>
     </div>
+    <toast :message="message" :show="show"></toast>
   </div>
 </template>
 
 <script>
   import Checkbox from '@/components/Private/CartProducts/views/Checkbox'
+  import Toast from '@/components/Public/Toast/Toast.vue'
   export default{
     name:"AllCount",
     components:{
-      Checkbox
+      Checkbox,
+      Toast
     },
     data(){
       return{
-        True:true
+        True:true,
+        show:false,
+        message:"请选择新品"
       }
     },
     methods:{
@@ -36,6 +41,14 @@
           this.$store.state.cartList.forEach(item => item.checked = false) ;
         }else{
           this.$store.state.cartList.forEach(item => item.checked = true) ;
+        }
+      },
+      GoToCount(){
+        if(!this.isSelectAll){
+          this.show = true ;
+          setTimeout(() =>{
+            this.show = false ;
+          },2000)
         }
       }
     },

@@ -7,6 +7,7 @@
     <selects class="selects" ref="select" :Pro="Pro"></selects>
     <comment class="comment" ref="comment" :Pro="Pro"></comment>
     <products-datails class="prodatails" ref="Imgs" :Pro="Pro" :flowerindex="flowerindex"></products-datails>
+    <toast :message="message" :show="show"></toast>
     <bottom class="bottom" @addCart='addCart'></bottom>
   </div>
 </template>
@@ -22,6 +23,7 @@
   import Bottom from '@/components/Public/p0/ProductsDatails/views/Bottom'
   import ProductsDatails from '@/components/Public/p0/ProductsDatails/views/ProductsDatails'
   import DataHeader from '@/components/Public/p0/DataHeader'
+  import Toast from '@/components/Public/Toast/Toast.vue'
 
   export default{
     name:'ProductsList',
@@ -33,7 +35,8 @@
       Selects,
       ProductsDatails,
       Bottom,
-      DataHeader
+      DataHeader,
+      Toast
     },
     data(){
       return{
@@ -41,7 +44,9 @@
         isbottom:false,
         Pro:'',
         themTopYs:[],
-        currentIndex:0
+        currentIndex:0,
+        message:'',
+        show:false
       }
     },
     props:['flowerindex'],
@@ -115,7 +120,14 @@
         products.price = this.Pro.price ;
 
         //把products添加到Vuex中
-        this.$store.dispatch('addCart',products);
+        this.$store.dispatch('addCart',products).then(res =>{
+          this.message = res ;
+          this.show = true ;
+          setTimeout(() =>{
+            this.show = false ;
+            this.message = '' ;
+          },2000)
+        })
       }
     }
   }
