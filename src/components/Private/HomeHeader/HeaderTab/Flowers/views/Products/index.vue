@@ -4,6 +4,7 @@
       class="products"
       v-for="(item,index) in flowers"
       :key="item.index"
+      @click="GetIndex(index)"
       >
       <div class="top">
         <img :src="item.imgUrl" alt="图片">
@@ -36,6 +37,12 @@
           console.log("数据获取失败!") ;
         }
       })
+    },
+    methods:{
+      //获取商品被点击的index,并通过路由传值
+      GetIndex(index){
+        this.$router.push('/datails/flowers/fp0' + index) ;
+      }
     }
   }
 </script>

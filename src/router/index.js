@@ -13,10 +13,13 @@ import materials from './catalog/materials'
 import newproducts from './catalog/newproducts'
 
 //home-products-datails
-import p0 from './datails/p0'
-import p1 from './datails/p1'
-import p2 from './datails/p2'
-import p3 from './datails/p3'
+import p0 from './datails/home/p0'
+import p1 from './datails/home/p1'
+import p2 from './datails/home/p2'
+import p3 from './datails/home/p3'
+
+//home-flowers-details
+import fp0 from './datails/flowers/fp0'
 
 //import Search
 import search from './search'
@@ -48,6 +51,7 @@ export default new Router({
     p0,
     p1,
     p2,
-    p3
+    p3,
+    fp0
   ]
 })

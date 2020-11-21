@@ -32,7 +32,7 @@
       //获取商品被点击的index,并通过路由传值
       Getindex(dayindex){
         // console.log(dayindex) ;
-        this.$router.push('/datails/p1' + dayindex) ;
+        this.$router.push('/datails/home/p1' + dayindex) ;
       }
     }
   }

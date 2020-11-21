@@ -32,7 +32,7 @@
       //获取商品被点击的index,并通过路由传值
       Getindex(flowerindex){
         // console.log(flowerindex) ;
-        this.$router.push('/datails/p0' + flowerindex) ;
+        this.$router.push('/datails/home/p0' + flowerindex) ;
       }
     }
   }

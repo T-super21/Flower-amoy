@@ -12,7 +12,7 @@
       <i>￥{{AllPrice}}</i>
     </div>
     <div class="right" @click="GoToCount">
-      去计算
+      去结算
       <i>({{this.$store.state.cartList.length}})</i>
     </div>
     <toast :message="message" :show="show"></toast>
@@ -32,7 +32,7 @@
       return{
         True:true,
         show:false,
-        message:"请选择新品"
+        message:"请选择商品"
       }
     },
     methods:{

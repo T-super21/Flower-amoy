@@ -1,5 +1,9 @@
 <template>
-  <div id="home-header" ref="headers" >
+  <div
+    id="home-header"
+    ref="headers"
+    :style="{backgroundImage:'url(' + this.backgrounds[1] + ')'}"
+    >
     <div class="Header fontcolor">
     	<i>花淘吧</i>
       <span>让我们一起淘天下</span>
@@ -31,8 +35,24 @@
 </template>
 
 <script>
+  import {GetDatas} from '@/network/home.js'
   export default{
-    name:'HomeHeader'
+    name:'HomeHeader',
+    data(){
+      return{
+        backgrounds:[]
+      }
+    },
+    mounted(){
+      GetDatas().then(res =>{
+        var ret = res.data.ret ;
+        if(ret == true){
+          this.backgrounds = res.data.data.backgrounds ;
+        }else{
+          console.log("获取数据失败!") ;
+        }
+      })
+    }
   }
 
 </script>
