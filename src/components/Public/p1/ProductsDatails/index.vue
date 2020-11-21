@@ -53,6 +53,9 @@
     mounted(){
       //监听屏幕滚动事件
       window.onscroll = this.headlescroll ;
+      //进入详情页重新设置scrollTop的值
+      document.body.scrollTop = 0 ;
+      document.documentElement.scrollTop = 0 ;
 
       //datalist页面的渲染
       GetDatas().then(res =>{
