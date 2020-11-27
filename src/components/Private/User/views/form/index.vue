@@ -1,7 +1,7 @@
 <template>
   <div class="usrForm">
     <div class="actform">
-      <form action="#" method="post">
+      <form action="" method="get">
         <span class="iconfont top">&#xe609;</span>
         <input type="email" class="inp" placeholder="user@qq.com" maxlength="17" required/></br>
         <span class="iconfont buttom">&#xe629;</span>

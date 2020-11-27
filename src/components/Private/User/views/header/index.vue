@@ -16,11 +16,11 @@
 <style lang="stylus" scoped>
   .userHeader
     .header
-      width:3rem
-      height:3rem
+      width:2rem
+      height:2rem
       border-radius:1.5rem
       text-align:center
-      margin:1.4rem auto
+      margin:1.5rem auto
       border:1px solid lightblue
       img
         line-height:3rem
@@ -28,15 +28,12 @@
         height:100%
         border-radius:1.5rem
       .name
+        max-height:.5rem
+        width:100%
         color:black
         text-align:center
         font-family:KaiTi
-        letter-spacing:.1rem
         margin-top:.3rem
-        width:3rem
-        height:.5rem
-        max-width:4rem
-        max-height:.5rem
         overflow:hidden
         font-size:.5rem
 

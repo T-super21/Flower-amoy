@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="user"
-    :style="{backgroundImage:'url(' +'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2529537377,1858410080&fm=15&gp=0.jpg'+ ')', backgroundRepeat:'no-repeat', backgroundPosition:'center center', backgroundSize: 'cover'}"
-    >
+  <div class="user">
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2529537377,1858410080&fm=15&gp=0.jpg" alt="图片">
     <user-header></user-header>
     <user-form></user-form>
     <user-btn></user-btn>
@@ -24,10 +22,11 @@
 </script>
 <style lang="stylus" scoped>
   .user
-    position:fixed
-    top:0
-    z-index:-1
-    width:100%
-    height:100%
     color:white
+    img
+      position:fixed
+      top:0
+      z-index:-1
+      width:100%
+      height:100%
 </style>
