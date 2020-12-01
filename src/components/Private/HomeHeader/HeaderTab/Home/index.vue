@@ -33,6 +33,9 @@
     	}
     },
     mounted(){
+      //修复模块切换问题
+      document.getElementById('Display_1').style.display = 'block' ;
+      document.getElementById('Loading_1').style.display = 'none' ;
       //获取json数据
       GetDatas().then(res =>{
         var ret = res.data.ret ;

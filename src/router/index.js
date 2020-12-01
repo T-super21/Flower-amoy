@@ -21,6 +21,9 @@ import p3 from './datails/home/p3'
 //home-flowers-details
 import fp0 from './datails/flowers/fp0'
 
+//home-materials-details
+import mp0 from "./datails/materials/fp0.js"
+
 //import Search
 import search from './search'
 
@@ -52,6 +55,8 @@ export default new Router({
     p1,
     p2,
     p3,
-    fp0
+    
+    fp0,
+    mp0
   ]
 })

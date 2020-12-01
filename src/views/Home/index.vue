@@ -28,9 +28,9 @@ export default{
   mounted(){
     window.onscroll = this.handleScroll ;
 
-     //解决网络差，数据加载慢的问题(loading)
-     document.getElementById('Display_1').style.display = 'block' ;
-     document.getElementById('Loading_1').style.display = 'none' ;
+     // //解决网络差，数据加载慢的问题(loading)
+     // document.getElementById('Display_1').style.display = 'block' ;
+     // document.getElementById('Loading_1').style.display = 'none' ;
 
   },
   methods:{
